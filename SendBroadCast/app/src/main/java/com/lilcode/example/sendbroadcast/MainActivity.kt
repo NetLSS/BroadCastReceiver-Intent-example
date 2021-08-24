@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private fun configureReceiver() {
         val filter = IntentFilter()
         filter.addAction("com.lilcode.example.sendbroadcast")
+        filter.addAction("android.intent.action.ACTION_POWER_DISCONNECTED") // 시스템 전원 연결 브로드캐스트 리스닝 해보기
         receiver = MyReceiver()
         registerReceiver(receiver, filter)
     }
